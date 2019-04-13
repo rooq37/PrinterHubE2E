@@ -1,5 +1,6 @@
 package step_definitions;
 
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
 import pages.TermsOfUsePage;
