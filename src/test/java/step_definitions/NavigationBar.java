@@ -1,6 +1,8 @@
 package step_definitions;
 
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 import pages.NavigationBarPage;
 
 public class NavigationBar {
@@ -33,6 +35,12 @@ public class NavigationBar {
             default:
                 throw new IllegalArgumentException("There is no page like " + pageName);
         }
+    }
+
+    @Then("^Check if option \"([^\"]*)\" is visible on the navigation bar$")
+    public void check_if_option_is_visible_on_the_navigation_bar(String expectedOption) {
+        System.out.println(navigationBarPage.getNavigationBarOptions());
+        Assert.assertTrue("There is no option like " + expectedOption + " on the navigation bar", navigationBarPage.getNavigationBarOptions().contains(expectedOption));
     }
 
 }

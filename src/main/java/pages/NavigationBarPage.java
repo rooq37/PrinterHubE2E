@@ -27,4 +27,8 @@ public class NavigationBarPage extends BasePage {
         getDriver().findElement(selectorNavigationTermsOfUse).click();
     }
 
+    public String getNavigationBarOptions(){
+        return getDriver().findElement(By.xpath(NAV_BAR_XPATH)).getText();
+    }
+
 }

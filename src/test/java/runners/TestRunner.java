@@ -10,7 +10,9 @@ import pages.BasePage;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "classpath:features",
-        glue = "classpath:step_definitions"
+        glue = "classpath:step_definitions",
+        plugin = {"pretty"},
+        tags = {"@regression"}
 )
 
 public class TestRunner {
