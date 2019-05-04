@@ -15,32 +15,17 @@ public class NavigationBar {
 
     @When("^Navigate to \"([^\"]*)\"$")
     public void navigate_to(String pageName) {
-        switch (pageName){
-            case "Home":
-                navigationBarPage.navigateToHome();
-                break;
-
-            case "Terms of use":
-                navigationBarPage.navigateToTermsOfUse();
-                break;
-
-            case "Login":
-                navigationBarPage.navigateToLogin();
-                break;
-
-            case "Register":
-                navigationBarPage.navigateToRegister();
-                break;
-
-            default:
-                throw new IllegalArgumentException("There is no page like " + pageName);
-        }
+        navigationBarPage.navigateToOption(pageName);
     }
 
     @Then("^Check if option \"([^\"]*)\" is visible on the navigation bar$")
     public void check_if_option_is_visible_on_the_navigation_bar(String expectedOption) {
-        System.out.println(navigationBarPage.getNavigationBarOptions());
         Assert.assertTrue("There is no option like " + expectedOption + " on the navigation bar", navigationBarPage.getNavigationBarOptions().contains(expectedOption));
+    }
+
+    @Then("^Check if option \"([^\"]*)\" is not visible on the navigation bar$")
+    public void check_if_option_is_not_visible_on_the_navigation_bar(String notExpectedOption) {
+        Assert.assertFalse("There is no option like " + notExpectedOption + " on the navigation bar", navigationBarPage.getNavigationBarOptions().contains(notExpectedOption));
     }
 
 }
