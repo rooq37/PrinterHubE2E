@@ -1,8 +1,11 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import static net.sourceforge.htmlunit.corejs.javascript.tools.SourceReader.toUrl;
 
 public abstract class BasePage {
 
@@ -14,9 +17,11 @@ public abstract class BasePage {
 
     public BasePage(){
         if(driver == null){
-            System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_PATH);
-            driver = new ChromeDriver();
-            driver.manage().window().maximize();
+            //System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_PATH);
+            //driver = new ChromeDriver();
+
+            driver = new RemoteWebDriver(toUrl("http://mtrokosa97.usermd.net:27917"), DesiredCapabilities.phantomjs());
+            //driver.manage().window().setSize(new Dimension(5000,500));
         }
     }
 

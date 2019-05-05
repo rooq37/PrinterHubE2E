@@ -1,6 +1,6 @@
 Feature: Home Page test
 
-  @regression
+  @regression @home_page
   Scenario: Home test
     Given Open home page
     Then Check if logo is visible
