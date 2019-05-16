@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -17,11 +18,15 @@ public abstract class BasePage {
 
     public BasePage(){
         if(driver == null){
+            DesiredCapabilities dr = DesiredCapabilities.phantomjs();
+            dr.setCapability("phantomjs.page.customHeaders.Accept-Language", "en");
+            //ChromeOptions options = new ChromeOptions();
+            //options.addArguments("--lang=en");
             //System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_PATH);
-            //driver = new ChromeDriver();
+            //driver = new ChromeDriver(options);
 
-            driver = new RemoteWebDriver(toUrl("http://mtrokosa97.usermd.net:27917"), DesiredCapabilities.phantomjs());
-            //driver.manage().window().setSize(new Dimension(5000,500));
+            driver = new RemoteWebDriver(toUrl("http://mtrokosa97.usermd.net:27917"), dr);
+            //driver.manage().window().maximize();
         }
     }
 
