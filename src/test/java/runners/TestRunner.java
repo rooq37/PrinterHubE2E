@@ -11,7 +11,7 @@ import pages.BasePage;
 @CucumberOptions(
         features = "classpath:features",
         glue = "classpath:step_definitions",
-        tags = "@messages"
+        tags = "@regression"
 )
 
 public class TestRunner {
