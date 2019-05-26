@@ -18,14 +18,9 @@ public class NavigationBar {
         navigationBarPage.navigateToOption(pageName);
     }
 
-    @Then("^Check if option \"([^\"]*)\" is visible on the navigation bar$")
-    public void check_if_option_is_visible_on_the_navigation_bar(String expectedOption) {
-        Assert.assertTrue("There is no option like " + expectedOption + " on the navigation bar", navigationBarPage.getNavigationBarOptions().contains(expectedOption));
-    }
-
-    @Then("^Check if option \"([^\"]*)\" is not visible on the navigation bar$")
-    public void check_if_option_is_not_visible_on_the_navigation_bar(String notExpectedOption) {
-        Assert.assertFalse("There is no option like " + notExpectedOption + " on the navigation bar", navigationBarPage.getNavigationBarOptions().contains(notExpectedOption));
+    @Then("^Check if user is logged in$")
+    public void check_if_user_is_logged_in() {
+        Assert.assertTrue("Check if user is logged in", navigationBarPage.checkIfUserIsLoggedIn());
     }
 
 }

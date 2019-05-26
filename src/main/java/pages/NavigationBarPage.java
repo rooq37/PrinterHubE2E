@@ -10,30 +10,33 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class NavigationBarPage extends BasePage {
 
     private static final String NAV_BAR_XPATH = "//nav[@class='navbar navbar-expand-lg navbar-dark bg-primary']";
+    private static final String CREDTIS_XPATH = "//span[text()='Credits: ']";
 
     public void navigateToOption(String optionName){
         Capabilities cap = ((RemoteWebDriver) getDriver()).getCapabilities();
         String browserName = cap.getBrowserName();
-        if(browserName.equals("phantomjs")){
-            getDriver().findElement(By.xpath("//span[@class='navbar-toggler-icon']")).click();
-        }
-
         String xpath = NAV_BAR_XPATH + "//a[text()='" + optionName + "']";
         By selector = By.xpath(xpath);
+
+        //if(browserName.equals("phantomjs")){
+            if(!getDriver().findElement(selector).isDisplayed())
+                getDriver().findElement(By.xpath("//span[@class='navbar-toggler-icon']")).click();
+        //}
+
         WebDriverWait wait = new WebDriverWait(getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
         getDriver().findElement(selector).click();
     }
 
-    public String getNavigationBarOptions(){
+    public boolean checkIfUserIsLoggedIn(){
         Capabilities cap = ((RemoteWebDriver) getDriver()).getCapabilities();
         String browserName = cap.getBrowserName();
         if(browserName.equals("phantomjs")){
             getDriver().findElement(By.xpath("//span[@class='navbar-toggler-icon']")).click();
         }
         WebDriverWait wait = new WebDriverWait(getDriver(), 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NAV_BAR_XPATH)));
-        return getDriver().findElement(By.xpath(NAV_BAR_XPATH)).getText();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(CREDTIS_XPATH)));
+        return getDriver().findElement(By.xpath(NAV_BAR_XPATH)).isDisplayed();
     }
 
 }
