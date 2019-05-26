@@ -6,7 +6,7 @@ public class UserProfilePage extends BasePage {
 
     private static final By selectorEditButton = By.xpath("//input[@class='btn btn-primary btn-raised' and @value='Edit']");
     private static final By selectorSaveButton = By.xpath("//input[@class='btn btn-primary btn-raised' and @value='Save']");
-    private static final By selectorCancelButton = By.xpath("//div[@class='btn btn-default' and text()='Cancel']");
+    private static final By selectorCancelButton = By.xpath("//div[@class='btn btn-raised btn-danger' and text()='Cancel']");
 
     public String getValueFromField(String fieldName){
         String xpath = "(//div[contains(.,'" + fieldName + "')])[1]/div[2]//input";

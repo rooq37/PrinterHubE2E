@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class NavigationBarPage extends BasePage {
 
     private static final String NAV_BAR_XPATH = "//nav[@class='navbar navbar-expand-lg navbar-dark bg-primary']";
-    private static final String CREDTIS_XPATH = "//span[text()='Credits: ']";
+    private static final String CREDTIS_XPATH = "//span[text()='Credits ']";
 
     public void navigateToOption(String optionName){
         Capabilities cap = ((RemoteWebDriver) getDriver()).getCapabilities();
