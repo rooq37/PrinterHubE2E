@@ -18,13 +18,13 @@ Feature: Other users tests
 
     Examples:
       | First name | Last name | Dormitory | Room | Result                               |
-      | Jan        | Kowalski  | T-16      | 601  | 1 Jan Kowalski T-16 601 See more     |
-      | Tomasz     |           |           |      | 2 Tomasz Dąbrowski T-22 723 See more |
-      |            | Nowacki   |           |      | 5 Damian Nowacki T-15 12 See more    |
-      |            |           | T-22      |      | 2 Tomasz Dąbrowski T-22 723 See more |
-      |            |           |           | 1024 | 4 Jan Kowal T-6 1024 See more        |
-      | Tomasz     |           | T-22      |      | 2 Tomasz Dąbrowski T-22 723 See more |
-      |            | Kowalski  |           | 601  | 1 Jan Kowalski T-16 601 See more     |
+      | Jan        | Kowalski  | T-16      | 601  | Jan Kowalski T-16 601 See more     |
+      | Tomasz     |           |           |      | Tomasz Dąbrowski T-22 723 See more |
+      |            | Nowacki   |           |      | Damian Nowacki T-15 12 See more    |
+      |            |           | T-22      |      | Tomasz Dąbrowski T-22 723 See more |
+      |            |           |           | 1024 | Jan Kowal T-6 1024 See more        |
+      | Tomasz     |           | T-22      |      | Tomasz Dąbrowski T-22 723 See more |
+      |            | Kowalski  |           | 601  | Jan Kowalski T-16 601 See more     |
 
 
   @regression @other_users

@@ -32,7 +32,7 @@ public class OtherUsers {
 
     @Then("^Check if Other Users result list \"([^\"]*)\" contains$")
     public void check_if_Other_Users_result_list_contains(String expectedResult) {
-        Assert.assertEquals("Result list", expectedResult, otherUsersPage.getResultTableContent());
+        Assert.assertTrue("Result list", otherUsersPage.getResultTableContent().contains(expectedResult));
     }
 
     @When("^Click at Other Users Page \"([^\"]*)\" button at \"([^\"]*)\" row$")
