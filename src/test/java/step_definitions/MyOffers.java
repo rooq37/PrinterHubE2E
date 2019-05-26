@@ -27,7 +27,7 @@ public class MyOffers {
 
     @Then("^Check if at My Offers List \"([^\"]*)\" contains$")
     public void check_if_at_My_Offers_List_contains(String expectedElement) {
-        Assert.assertEquals("My offers table", expectedElement, myOffersPage.getMyOffersList());
+        Assert.assertTrue("My offers table", myOffersPage.getMyOffersList().contains(expectedElement));
     }
 
 }
