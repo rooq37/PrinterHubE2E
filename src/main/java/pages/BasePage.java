@@ -1,5 +1,6 @@
 package pages;
 
+import gherkin.lexer.Th;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -39,6 +40,14 @@ public abstract class BasePage {
 
     public String getErrorMessageText(){
         return getDriver().findElement(errorMessageSelector).getText();
+    }
+
+    public void sleep(double sec){
+        try {
+            Thread.sleep((int) sec * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }

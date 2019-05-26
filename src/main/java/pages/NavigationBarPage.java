@@ -20,11 +20,12 @@ public class NavigationBarPage extends BasePage {
         By selector = By.xpath(xpath);
 
         //if(browserName.equals("phantomjs")){
-            if(!getDriver().findElement(selector).isDisplayed())
+            if(!getDriver().findElement(selector).isDisplayed()){
                 getDriver().findElement(By.xpath("//span[@class='navbar-toggler-icon']")).click();
+            }
         //}
 
-
+        sleep(1);
         WebDriverWait wait = new WebDriverWait(getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
         getDriver().findElement(selector).click();

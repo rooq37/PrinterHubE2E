@@ -4,10 +4,10 @@ import org.openqa.selenium.By;
 
 public class SingleMessagePage extends BasePage {
 
-    private static final By selectorFrom = By.xpath("//main[@class='container']//p[1]");
-    private static final By selectorTo = By.xpath("//main[@class='container']//p[2]");
-    private static final By selectorTitle = By.xpath("//main[@class='container']//p[4]");
-    private static final By selectorContent = By.xpath("//main[@class='container']//p[5]");
+    private static final By selectorFrom = By.xpath("//*[@id='sender']/../span[2]");
+    private static final By selectorTo = By.xpath("//*[@id='receiver']/../span[2]");
+    private static final By selectorTitle = By.xpath("//*[@id='title']");
+    private static final By selectorContent = By.xpath("//*[@id='content']");
 
     public String getFrom(){
         return getDriver().findElement(selectorFrom).getText();
