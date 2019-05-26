@@ -24,11 +24,7 @@ public class NavigationBarPage extends BasePage {
                 getDriver().findElement(By.xpath("//span[@class='navbar-toggler-icon']")).click();
         //}
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         WebDriverWait wait = new WebDriverWait(getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
         getDriver().findElement(selector).click();
@@ -40,11 +36,7 @@ public class NavigationBarPage extends BasePage {
         if(browserName.equals("phantomjs")){
             getDriver().findElement(By.xpath("//span[@class='navbar-toggler-icon']")).click();
         }
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         WebDriverWait wait = new WebDriverWait(getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(CREDTIS_XPATH)));
         return getDriver().findElement(By.xpath(NAV_BAR_XPATH)).isDisplayed();
