@@ -1,5 +1,6 @@
 package pages;
 
+import gherkin.lexer.Th;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
@@ -23,6 +24,11 @@ public class NavigationBarPage extends BasePage {
                 getDriver().findElement(By.xpath("//span[@class='navbar-toggler-icon']")).click();
         //}
 
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         WebDriverWait wait = new WebDriverWait(getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
         getDriver().findElement(selector).click();
@@ -33,6 +39,11 @@ public class NavigationBarPage extends BasePage {
         String browserName = cap.getBrowserName();
         if(browserName.equals("phantomjs")){
             getDriver().findElement(By.xpath("//span[@class='navbar-toggler-icon']")).click();
+        }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         WebDriverWait wait = new WebDriverWait(getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(CREDTIS_XPATH)));
