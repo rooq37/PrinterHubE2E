@@ -18,14 +18,17 @@ public class Home {
         homePage.openHomePage();
     }
 
-    @Then("^Check if logo is visible$")
-    public void check_if_logo_is_visible() {
-        Assert.assertTrue(homePage.isMainLogoVisible());
+    @Then("^Check if chart is visible$")
+    public void check_if_chart_is_visible() {
+        Assert.assertTrue(homePage.isChartVisible());
     }
 
     @Then("^Check if home page text is visible$")
     public void check_if_home_page_text_is_visible() {
-        Assert.assertTrue(homePage.getContentText().contains("Lorem ipsum dolor sit amet"));
+        Assert.assertTrue(homePage.getContentText().contains("Welcome on PrinterHub. " +
+                "This site is made by students for students which want to print some " +
+                "stuff and they don't have a printer or which have a printer but want" +
+                " to share it with other students in dormitory."));
     }
 
 }

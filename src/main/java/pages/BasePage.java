@@ -18,15 +18,18 @@ public abstract class BasePage {
 
     public BasePage(){
         if(driver == null){
-            DesiredCapabilities dr = DesiredCapabilities.phantomjs();
-            dr.setCapability("phantomjs.page.customHeaders.Accept-Language", "en");
-            //ChromeOptions options = new ChromeOptions();
-            //options.addArguments("--lang=en");
-            //System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_PATH);
-            //driver = new ChromeDriver(options);
-
-            driver = new RemoteWebDriver(toUrl("http://mtrokosa97.usermd.net:27917"), dr);
-            //driver.manage().window().maximize();
+            boolean remote = true;
+            if(remote){
+                DesiredCapabilities dr = DesiredCapabilities.phantomjs();
+                dr.setCapability("phantomjs.page.customHeaders.Accept-Language", "en");
+                driver = new RemoteWebDriver(toUrl("http://mtrokosa97.usermd.net:27917"), dr);
+            }else{
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--lang=en");
+                System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_PATH);
+                driver = new ChromeDriver(options);
+                driver.manage().window().maximize();
+            }
         }
     }
 

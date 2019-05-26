@@ -7,9 +7,10 @@ Feature: Login test
     And Enter at Login Page in "Email" value "test1@test.pl"
     And Enter at Login Page in "Password" value "test1"
     And Click at Login Page "Log In" Button
-    Then Check if option "LOGOUT" is visible on the navigation bar
-    And Check if option "LOGIN" is not visible on the navigation bar
-    And Check if option "REGISTER" is not visible on the navigation bar
+    And Navigate to "My account"
+    Then Check if option "Logout" is visible on the navigation bar
+    And Check if option "Login" is not visible on the navigation bar
+    And Check if option "Register" is not visible on the navigation bar
 
   @regression @login
   Scenario: Login not existing user
