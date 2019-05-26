@@ -7,7 +7,7 @@ Feature: Other users tests
     And Enter at Login Page in "Email" value "test1@test.pl"
     And Enter at Login Page in "Password" value "test1"
     And Click at Login Page "Log In" Button
-    And Navigate to "Other users"
+    And Navigate to "Users"
     And Enter at Other Users Page in "First name" value "<First name>"
     And Enter at Other Users Page in "Last name" value "<Last name>"
     And Enter at Other Users Page in "Dormitory" value "<Dormitory>"
@@ -34,7 +34,7 @@ Feature: Other users tests
     And Enter at Login Page in "Email" value "test1@test.pl"
     And Enter at Login Page in "Password" value "test1"
     And Click at Login Page "Log In" Button
-    And Navigate to "Other users"
+    And Navigate to "Users"
     And Enter at Other Users Page in "First name" value "Damian"
     And Enter at Other Users Page in "Last name" value "Nowacki"
     And Enter at Other Users Page in "Dormitory" value "T-15"
@@ -42,9 +42,9 @@ Feature: Other users tests
     And Click at Other Users Page "Search" button
     Then Check if Other Users result list "5 Damian Nowacki T-15 12 See more" contains
     When Click at Other Users Page "See more" button at "5 Damian Nowacki T-15 12 See more" row
-    Then Check if at User Profile Page "First name" is "Damian"
-    And Check if at User Profile Page "Last name" is "Nowacki"
-    And Check if at User Profile Page "Student index" is "223555"
-    And Check if at User Profile Page "Email" is "test5@test.pl"
+    Then Check if at User Profile Page "First Name" is "Damian"
+    And Check if at User Profile Page "Last Name" is "Nowacki"
+    And Check if at User Profile Page "Student No" is "223555"
+    And Check if at User Profile Page "Email address" is "test5@test.pl"
     And Check if at User Profile Page "Dormitory" is "T-15"
     And Check if at User Profile Page "Room" is "12"
