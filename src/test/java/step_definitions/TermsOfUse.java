@@ -19,7 +19,7 @@ public class TermsOfUse {
 
     @Then("^Check if terms of use text is visible$")
     public void check_if_terms_of_use_text_is_visible() {
-        Assert.assertTrue("Content text", termsOfUsePage.getContentText().contains("Lorem ipsum dolor sit amet"));
+        Assert.assertTrue("Content text", termsOfUsePage.getContentText().contains("It is forbidden to cheat."));
     }
 
 }
