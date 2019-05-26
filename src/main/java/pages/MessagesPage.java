@@ -14,19 +14,19 @@ public class MessagesPage extends BasePage {
     }
 
     public void showMessageByTitleAndSender(String title, String sender){
-        By selectorTableRow = By.xpath("//table[@class='table']/tbody/tr");
+        By selectorTableRow = By.xpath("//table[@class='sortable table']/tbody/tr");
         List<WebElement> tableRows = getDriver().findElements(selectorTableRow);
         int index = -1;
         for(int i = 0; i < tableRows.size(); i++)
             if(tableRows.get(i).getText().contains(title) && tableRows.get(i).getText().contains(sender)) index = i;
 
         index += 1;
-        By selectorShow = By.xpath("//table[@class='sortable table row-container']/tbody/tr[" + index + "]//a[text()='Show']");
+        By selectorShow = By.xpath("//table[@class='sortable table']/tbody/tr[" + index + "]//a[text()='Show']");
         getDriver().findElement(selectorShow).click();
     }
 
     public String getMessageList(){
-        By selectorTable = By.xpath("//table[@class='sortable table row-container']/tbody");
+        By selectorTable = By.xpath("//table[@class='sortable table']/tbody");
         return getDriver().findElement(selectorTable).getText();
     }
 
