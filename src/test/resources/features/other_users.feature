@@ -40,8 +40,8 @@ Feature: Other users tests
     And Enter at Other Users Page in "Dormitory" value "T-15"
     And Enter at Other Users Page in "Room" value "12"
     And Click at Other Users Page "Search" button
-    Then Check if Other Users result list "5 Damian Nowacki T-15 12 See more" contains
-    When Click at Other Users Page "See more" button at "5 Damian Nowacki T-15 12 See more" row
+    Then Check if Other Users result list "Damian Nowacki T-15 12 See more" contains
+    When Click at Other Users Page "See more" button at "Damian Nowacki T-15 12 See more" row
     Then Check if at User Profile Page "First Name" is "Damian"
     And Check if at User Profile Page "Last Name" is "Nowacki"
     And Check if at User Profile Page "Student No" is "223555"

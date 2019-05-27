@@ -30,7 +30,7 @@ public class OtherUsersPage extends BasePage {
         List<WebElement> tableRows = getDriver().findElements(selectorTableRow);
         int index = -1;
         for(int i = 0; i < tableRows.size(); i++)
-            if(tableRows.get(i).getText().equals(rowContent)) index = i;
+            if(tableRows.get(i).getText().contains(rowContent)) index = i;
 
         index += 1;
         By selectorSeeMore = By.xpath("//table[@class='sortable table']/tbody/tr[" + index + "]//a[text()='See more']");
